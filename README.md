@@ -2,7 +2,7 @@
 
 Create several Meteor methods with the same before and after hooks.
 
-Useful in situations where you want to execute one or more functions before
+Useful in situations where you want to execute the same functions before
 and/or after methods, e.g. check for userId, roles, create logs etc.
 
 ## Install
@@ -12,9 +12,12 @@ and/or after methods, e.g. check for userId, roles, create logs etc.
 ## Usage
 
 Define your methods with `Meteor.extendedMethods()` instead of
-`Meteor.methods()` and pass before and after hooks as parameters:
+`Meteor.methods()` and pass optionally before and after hooks as parameters:
 
 `Meteor.extendedMethods({ ... }, beforeHooks, afterHooks);`
+
+(Note: To skip beforeHooks, pass a falsy value, e.g.
+`Meteor.extendedMethods({ ... }, null, afterHooks);`)
 
 Call your methods via `Meteor.call()` as usual.
 

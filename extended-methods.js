@@ -1,6 +1,6 @@
-const _createMethod = function(method, beforeHooks = [], afterHooks = []) {
-    let allBeforeHooks = beforeHooks;
-    let allAfterHooks = afterHooks;
+const _createMethod = function(method, beforeHooks, afterHooks) {
+    let allBeforeHooks = beforeHooks || [];
+    let allAfterHooks = afterHooks || [];
     if (!Array.isArray(allBeforeHooks)) allBeforeHooks = [beforeHooks];
     if (!Array.isArray(allAfterHooks)) allAfterHooks = [afterHooks];
     return function(...args) {
