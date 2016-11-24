@@ -1,7 +1,7 @@
 Package.describe({
   name: 'kosst:extended-methods',
   version: '0.1.0',
-  summary: 'Create Meteor methods with before and after hooks',
+  summary: 'Create several Meteor methods with the same before and after hooks',
   git: 'https://github.com/kosst/extended-methods.git',
   documentation: 'README.md'
 });

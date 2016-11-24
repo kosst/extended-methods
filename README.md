@@ -1,6 +1,6 @@
 # Extended Meteor Methods
 
-Create Meteor methods with before and after hooks.
+Create several Meteor methods with the same before and after hooks.
 
 Useful in situations where you want to execute one or more functions before
 and/or after methods, e.g. check for userId, roles, create logs etc.
@@ -16,12 +16,13 @@ Define your methods with `Meteor.extendedMethods()` instead of
 
 `Meteor.extendedMethods({ ... }, beforeHooks, afterHooks);`
 
-All passed functions are **executed in sequence before and after each method**.
+Call your methods via `Meteor.call()` as usual.
+
+When yo call your method, all passed functions are
+**executed in sequence before and after the method**.
 
 Inside your functions, `this` is bound to the context of the method, so you have
 access to `this.userId` etc.
-
-Call your methods via `Meteor.call()` as usual.
 
 Example for using with
 [alanning:roles](https://github.com/alanning/meteor-roles) package:
